@@ -1,0 +1,113 @@
+.container {
+    max-width: 120rem; //so that the container can decrease if there's not enough space
+    margin: 8rem auto; //for centering container in the body element
+    background-color: var(--color-grey-light-1);
+    box-shadow: 0 2rem 6rem rgba(0, 0, 0, .3);
+    min-height: 50rem; //just for testing purpose
+
+    @media only screen and (max-width: $bp-largest) {
+        margin: 0; //no margin reqd as we want it to fill the entire viewport
+        max-width: 100%;
+        width: 100%;
+
+    }
+
+}
+
+.header {
+    height: 7rem;
+    background-color: #fff;
+    border-bottom: var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem; //so that input element in search and placeholder inherit it
+
+
+    @media only screen and (max-width: $bp-smallest) {
+        flex-wrap: wrap; //allows items(search bar in this case) to wrap to the next line if they dont have enough space
+        height: 11rem;
+        align-content: space-around;
+    }
+
+
+}
+
+.content {
+    display: flex;
+
+    @media only screen and (max-width: $bp-medium) {
+        flex-direction: column;
+
+    }
+}
+
+.sidebar {
+    background-color: var(--color-grey-dark-1);
+    flex: 0 0 18%; //flex grow  flex shrink  flex basis(width)
+    //since we used %, it's okay to say 0 for flex-shrink
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.hotel-view {
+    background-color: #fff;
+    //TESTING
+    flex: 1; //same as flex-grow
+    min-height: 80rem; //the other elements in the flex automatically get resized to this height as align-items: stretch; is the default behaviour
+}
+
+.detail {
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 4.5rem;
+    background-color: var(--color-grey-light-1);
+    border-bottom: var(--line);
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 3rem;
+    }
+
+    //first media query for larger screen when it comes to max-width
+
+    @media only screen and (max-width: $bp-small) {
+        flex-direction: column;
+    }
+
+    //second media query for smaller screen
+}
+
+.description {
+    background-color: #fff;
+    box-shadow: var(--shadow-light);
+    padding: 3rem;
+    flex: 0 0 60%; //flex basis set to 60%
+    margin-right: 4.5rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-right: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        flex-direction: column;
+        margin-right: 0;
+        margin-bottom: 3rem;
+
+    }
+}
+
+.user-reviews {
+    flex: 1; //occupies the remaining space
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media only screen and (max-width: $bp-small) {
+        flex-direction: row;
+    }
+}
