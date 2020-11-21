@@ -4,217 +4,375 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet" />
+
+<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"> 
+
   <link rel="stylesheet" href="css/style.css" />
   <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <title>trillo &mdash; Your all-in-one booking app</title>
+  <title>Portfolio - Jagjot Singh</title>
 </head>
 
 <body>
-  <div class="container">
-    <header class="header">
-      <img src="img/logo.png" alt="trillo logo" class="logo" />
-      <form action="#" class="search">
-        <input type="text" class="search__input" placeholder="Search hotels" />
-        <button class="search__button">
-          <svg class="search__icon">
-            <!-- name of the sprite(called symbol-defs.svg in icomoon folder) followed by # and then the name of the icon (open demo.html in icomoon folder for the name)
-            this way of including html works only on web server, so might not work if we just open the html file lol-->
-            <use xlink:href="img/sprite.svg#icon-magnifying-glass"></use>
-          </svg>
-        </button>
-      </form>
-
-      <nav class="user-nav">
-        <div class="user-nav__icon-box">
-          <svg class="user-nav__icon">
-            <use xlink:href="img/sprite.svg#icon-bookmark"></use>
-          </svg>
-          <span class="user-nav__notification">7</span>
-        </div>
-        <div class="user-nav__icon-box">
-          <svg class="user-nav__icon">
-            <use xlink:href="img/sprite.svg#icon-chat"></use>
-          </svg>
-          <span class="user-nav__notification">13</span>
-        </div>
-
-        <div class="user-nav__user">
-          <img src="img/user.jpg" alt="User photo" class="user-nav__user-photo" />
-          <span class="user-nav__user-name">Jonas</span>
-        </div>
-      </nav>
-    </header>
-    <div class="content">
-      <nav class="sidebar">
-        <ul class="side-nav">
-          <li class="side-nav__item">
-            <a href="#" class="side-nav__link">
-              <svg class="side-nav__icon">
-                <use xlink:href="img/sprite.svg#icon-home"></use>
-              </svg>
-              <span>Hotel</span>
-            </a>
+  <div class="navigation">
+    <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+    <label for="navi-toggle" class="navigation__button">
+      <span class="navigation__icon">&nbsp;</span>
+    </label>
+    <div class="navigation__background">&nbsp;</div>
+    <nav class="navigation__nav">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a href="#projects" class="navigation__link">Projects</a>
           </li>
-          <li class="side-nav__item">
-            <a href="#" class="side-nav__link">
-              <svg class="side-nav__icon">
-                <use xlink:href="img/sprite.svg#icon-aircraft-take-off"></use>
-              </svg>
-              <span>Flight</span>
-            </a>
+          <li class="navigation__item">
+            <a href="#about" class="navigation__link">About Me</a>
           </li>
-          <li class="side-nav__item">
-            <a href="#" class="side-nav__link">
-              <svg class="side-nav__icon">
-                <use xlink:href="img/sprite.svg#icon-key"></use>
-              </svg>
-              <span>Car rental</span>
-            </a>
-          </li>
-          <li class="side-nav__item">
-            <a href="#" class="side-nav__link">
-              <svg class="side-nav__icon">
-                <use xlink:href="img/sprite.svg#icon-map"></use>
-              </svg>
-              <span>Tours</span>
-            </a>
+          <li class="navigation__item">
+            <a href="#contact" class="navigation__link">Connect With Me</a>
           </li>
         </ul>
+    </nav>
+  </div>
 
-        <div class="legal">&copy; 2020 by trillo. All rights reserved.</div>
-      </nav>
-      <main class="hotel-view">
-        <div class="gallery">
-          <figure class="gallery__item">
-            <img src="img/hotel-1.jpg" alt="Photo of hotel 1" class="gallery__photo" />
-          </figure>
-          <figure class="gallery__item">
-            <img src="img/hotel-2.jpg" alt="Photo of hotel 2" class="gallery__photo" />
-          </figure>
-          <figure class="gallery__item">
-            <img src="img/hotel-3.jpg" alt="Photo of hotel 3" class="gallery__photo" />
-          </figure>
+  <main>
+    <section class="section header" id="header">
+    
+      <div class="header__content" >
+        <h2 class=" u-center-text  header__content--1">Hello, I'm Jagjot Singh.</h2>
+        <h3 class=" u-center-text  header__content--2">A Web and App Developer.</h3>
+        <a target="_blank" href="https://drive.google.com/file/d/1cWAWI7MrwjaExt7ZBArV-8QL_dWsKa0c/view?usp=sharing" class="resume">
+            <p>Resume</p>
+        </a>
+      </div>
+    <div class="header__above_image"></div>
+    <img src="./img/computer image.png" alt="Header image" class="header__img">
+   
+
+      <div class="header__purplediv--1 " ></div>
+      <div class="header__purplediv--2 " ></div>
+      <div class="header__purplediv--3 " ></div>
+      <div class="header__purplediv--4 " ></div>
+    
+    </section>
+
+    <section class="projects" id="projects">
+       <h2 class="projects__heading heading-topic">Projects</h2>
+
+   <div class="cards">
+    <div class="card">
+      <div class="card__side card__side--front">
+        <!-- in BEM we don't nest the classes, say card__side__picture. That'd just make class names very long -->
+        <div class="card__picture card__picture--1">&nbsp;</div>
+        <!-- &nbsp; is symbol for space in html -->
+        <h4 class="card__heading card__heading--1">
+         flashChat
+        </h4>
+        <div class="card__intro">
+          <p class="intro">FlashChat is a texting application that allows users to send and receive messages.</p>
         </div>
-
-        <div class="overview">
-          <h1 class="overview__heading">Hotel Las Palmas</h1>
-          <div class="overview__stars">
-            <svg class="overview__icon-star">
-              <use xlink:href="img/sprite.svg#icon-star"></use>
-            </svg>
-            <svg class="overview__icon-star">
-              <use xlink:href="img/sprite.svg#icon-star"></use>
-            </svg>
-            <svg class="overview__icon-star">
-              <use xlink:href="img/sprite.svg#icon-star"></use>
-            </svg>
-            <svg class="overview__icon-star">
-              <use xlink:href="img/sprite.svg#icon-star"></use>
-            </svg>
-            <svg class="overview__icon-star">
-              <use xlink:href="img/sprite.svg#icon-star"></use>
-            </svg>
-          </div>
-
-          <div class="overview__location">
-            <svg class="overview__icon-location">
-              <use xlink:href="img/sprite.svg#icon-location-pin"></use>
-            </svg>
-            <button class="btn-inline">Albufeira, Portugal</button>
-          </div>
-
-          <div class="overview__rating">
-            <div class="overview__rating-average">8.6</div>
-            <div class="overview__rating-count">429 votes</div>
-          </div>
+        <div class="card__technologies">
+          <svg class="dart__icon app--1">
+            <use xlink:href="img/sprite-2.svg#icon-dart"></use>
+          </svg>
+          <svg class="flutter__icon app--1">
+            <use xlink:href="img/sprite-2.svg#icon-flutter"></use>
+          </svg>
+          <svg class="firebase__icon app--1">
+            <use xlink:href="img/sprite-2.svg#icon-firebase"></use>
+          </svg>
         </div>
-
-        <div class="detail">
-          <div class="description">
-            <p class="paragraph">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nisi dignissimos debitis ratione sapiente
-              saepe. Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate.
-            </p>
-            <p class="paragraph">
-              Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate delectus, inventore iure
-              aliquid aliquam.
-            </p>
-
-            <ul class="list">
-              <li class="list__item">Close to the beach</li>
-              <li class="list__item">Breakfast included</li>
-              <li class="list__item">Free airport shuttle</li>
-              <li class="list__item">Free wifi in all rooms</li>
-              <li class="list__item">Air conditioning and heating</li>
-              <li class="list__item">Pets allowed</li>
-              <li class="list__item">We speak all languages</li>
-              <li class="list__item">Perfect for families</li>
+      </div>
+      <div class="card__side card__side--back card__side--back-1">
+        <div class="card__cta">
+          <div class="card__details-indepth">
+            <p class="details">Features</p>
+            <ul>
+              <li>OTP-based Sign In</li>
+              <li>Contact integration</li>
+              <li>Profile customization</li>
+              <li>Push notifications</li>
             </ul>
-            <div class="recommend">
-              <p class="recommend__count">
-                Lucy and 3 other friends recommend this hotel.
-              </p>
-              <div class="recommend__friends">
-                <img src="img/user-3.jpg" alt="Friend 1" class="recommend__photo">
-                <img src="img/user-4.jpg" alt="Friend 2" class="recommend__photo">
-                <img src="img/user-5.jpg" alt="Friend 3" class="recommend__photo">
-                <img src="img/user-6.jpg" alt="Friend 4" class="recommend__photo">
+            
+          </div>
+          <a target="_blank" href="https://play.google.com/store/apps/details?id=co.jugjot.flash_chat&hl=en" class="btn btn--white btn--chat-1">
+            <div class="download_btn download_btn--1">
+              <svg class="play__icon">
+                <use xlink:href="img/sprite.svg#icon-googleplay"></use>
+              </svg>
+              <p>Play Store</p>
+            </div>
+            
+            
+           
+       </a>
+         <a target="_blank" href="https://github.com/Jagjot26/FlashChat" class="btn btn--white btn--chat-2">
+         <div class="download_btn">
+          <svg class="github__icon">
+           <use xlink:href="img/sprite.svg#icon-github"></use>
+          </svg>
+         <p>GitHub</p>
+          </div>
+        </a>
+          
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <div class="card__side card__side--front">
+        <!-- in BEM we don't nest the classes, say card__side__picture. That'd just make class names very long -->
+        <div class="card__picture card__picture--2">&nbsp;</div>
+        <!-- &nbsp; is symbol for space in html -->
+        <h4 class="card__heading card__heading--2">
+         alorine
+        </h4>
+      
+          <p class="card__intro">Alorine is a platform for a writer to collaborate with like-minded people.</p>
+        
+        <div class="card__technologies">
+          <svg class="dart__icon app--2">
+            <use xlink:href="img/sprite-2.svg#icon-dart"></use>
+          </svg>
+          <svg class="flutter__icon app--2">
+            <use xlink:href="img/sprite-2.svg#icon-flutter"></use>
+          </svg>
+          <svg class="firebase__icon app--2">
+            <use xlink:href="img/sprite-2.svg#icon-firebase"></use>
+          </svg>
+        </div>
+      </div>
+      <div class="card__side card__side--back card__side--back-2">
+        <div class="card__cta">
+          <div class="card__details-indepth card__details-indepth-alorine">
+            <p class="details">Features</p>
+            <ul>
+              <li>A lot of text formatting options</li>
+              <li>Gif insertion using Giphy's API</li>
+              <li>Sharing of blogs via Firebase dynamic links</li>
+              <li>Search for specific posts</li>
+              <li>Like/unlike blog posts</li>
+              <li>Comments section</li>
+            
+            </ul>
+            
+          </div>
+          <a target="_blank" href="https://play.google.com/store/apps/details?id=com.alorine&hl=en_IN" class="btn btn--white">
+            <div class="download_btn download_btn--2">
+              <svg class="play__icon">
+                <use xlink:href="img/sprite.svg#icon-googleplay"></use>
+              </svg>
+              <p>Play Store</p>
+            </div>
+           
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="card">
+      <div class="card__side card__side--front">
+        <!-- in BEM we don't nest the classes, say card__side__picture. That'd just make class names very long -->
+        <div class="card__picture card__picture--3">&nbsp;</div>
+        <!-- &nbsp; is symbol for space in html -->
+        <h4 class="card__heading card__heading--3">
+          if-Alz
+        </h4>
+        <div class="card__intro">
+          <p class="intro">If-Alz allows people to check if they have Alzheimer's by playing some mini games.</p>
+        </div>
+
+        <div class="card__technologies">
+          <svg class="dart__icon app--3">
+            <use xlink:href="img/sprite-2.svg#icon-dart"></use>
+          </svg>
+          <svg class="flutter__icon app--3">
+            <use xlink:href="img/sprite-2.svg#icon-flutter"></use>
+          </svg>
+          <svg class="firebase__icon app--3">
+            <use xlink:href="img/sprite-2.svg#icon-firebase"></use>
+          </svg>
+        </div>
+      </div>
+      <div class="card__side card__side--back card__side--back-3">
+        <div class="card__cta">
+          <div class="card__details-indepth">
+            <p class="details">Features</p>
+            <ul>
+              <li>'Simon' memory game implementation</li>
+              <li>A quiz to identify famous celebrities</li>
+              <li>A quiz that tests logical reasoning</li>
+              <li>Option to play individual games</li>
+            </ul>
+            
+          </div>
+          <a target="_blank" href="https://github.com/Jagjot26/ifAlz" class="btn btn--white">
+            <div class="download_btn download_btn--3">
+              <svg class="github__icon">
+                <use xlink:href="img/sprite.svg#icon-github"></use>
+              </svg>
+              <p>GitHub</p>
+            </div>
+           
+          </a>
+        </div>
+      </div>
+    </div>
+   </div>
+
+   
+    </section>
+
+
+    <section class="about" id="about">
+      <div class="header__purplediv--8" ></div>
+      <div class="header__purplediv--7" ></div>
+      <div class="header__purplediv--6" ></div>
+      <div class="header__purplediv--5" ></div>
+
+     <h2 class="heading-topic heading-about">About</h2>
+         <div class="story">
+           <figure class="story__shape">
+            <img class="story__img" src="img/jagjot.jpeg" alt="jagjot">
+            <figcaption class="story__caption">Jagjot Singh</figcaption>
+           </figure>
+           
+           <h2 class="story__heading">Hi, I'm Jagjot</h2>
+          <p class="story__text">I'm result oriented and I really like to build user interfaces. I started with mobile app development, and now I'm delving more into web development. I've worked with Dart, Flutter and Firebase in the past to develop some mobile apps. Two of my apps crossed 1000 downloads on the Play Store! I have some prior experience with NodeJS, and I've developed some static websites using HTML, CSS and SCSS. I'm learning ReactJS as of now. </p>
+         </div>
+         
+         <div class="header__purplediv--5" ></div>
+         <div class="header__purplediv--6" ></div>
+         <div class="header__purplediv--7" ></div>
+         <div class="header__purplediv--8" ></div>
+         <div class="header__purplediv--9" ></div>
+
+    </section>
+
+    <section class="contact" id="contact">
+      <!-- <h2 class="heading-topic heading-contact">Contact Me</h2> -->
+          
+       <div class="container">
+          <div class="form__container-a">
+            <h2 class="form__heading heading-a">Let's Get In Touch</h2>
+            <p class="form__text">Hey there! If you like my work and want to give me some feedback or hire me for one of your projects, feel free to hit me up on any of these platforms or send me a message straight away from the contact section.</p>
+            <div class="reach__div">
+              <div class="email">
+                <svg class="reach__icon icon__email">
+                  <use xlink:href="img/sprite-3.svg#icon-envelope-o"></use>
+                </svg>
+                <p class="email__text">jaysing989@gmail.com</p>
+              </div>
+              <div class="phone">
+                <svg class="reach__icon icon__phone">
+                  <use xlink:href="img/sprite-3.svg#icon-phone-call"></use>
+                </svg>
+                <p class="phone__text">+91-8800439661</p>
+              </div>
+            </div>
+            <div class="social">
+              <p class="social__text">Connect with me:</p>
+              <div class="social__icons">
+                <a target="_blank" href="https://github.com/jagjot26" class="github">
+                  <svg class="social__icon icon__github">
+                    <use xlink:href="img/sprite.svg#icon-github"></use>
+                  </svg>
+                </a>
+                <a target="_blank" href="https://linkedin.com/in/jagjot26" class="linkedin">
+                  <svg class="social__icon icon__linkedin">
+                    <use xlink:href="img/sprite.svg#icon-linkedin"></use>
+                  </svg>
+                </a>
+                <a target="_blank" href="https://www.instagram.com/jugj0t/" class="instagram">
+                  <svg class="social__icon icon__instagram">
+                    <use xlink:href="img/sprite.svg#icon-instagram"></use>
+                  </svg>
+                </a>
+                
+                <a target="_blank" href="https://twitter.com/jagsing26" class="twitter">
+                  <svg class="social__icon icon__twitter">
+                    <use xlink:href="img/sprite.svg#icon-twitter"></use>
+                  </svg>
+                </a>
+              
+               
               </div>
             </div>
           </div>
 
-          <div class="user-reviews">
-            <figure class="review">
-              <!-- figure is good for text and image description -->
-              <blockquote class="review__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga doloremque
-                architecto dicta animi, totam, itaque officia ex.
-              </blockquote>
-              <figcaption class="review__user">
-                <img src="img/user-1.jpg" alt="User 1" class="review__photo">
-                <div class="review__user-box">
-                  <p class="review__user-name">Nick Smith</p>
-                  <p class="review__user-date">Feb 23rd, 2017</p>
 
-                </div>
-                <div class="review__user-rating">7.8</div>
-              </figcaption>
-            </figure>
+          <div class="form__container-b">
 
-            <figure class="review">
-              <!-- figure is good for text and image description -->
-              <blockquote class="review__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga doloremque
-                architecto dicta animi.
-              </blockquote>
-              <figcaption class="review__user">
-                <img src="img/user-2.jpg" alt="User 2" class="review__photo">
-                <div class="review__user-box">
-                  <p class="review__user-name">Mary Thomas</p>
-                  <p class="review__user-date">May 23rd, 2017</p>
+            <form class="form__contact" autocomplete="off" id="form">
+              <h3 class="form__heading">Contact</h3>
+              <div class="input-container">
+                <input type="text" name="name" class="input" id="username">
+                <label for="">Username</label>
+                <span>Username</span>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+              </div>
+              <div class="input-container">
+                <input type="email" name="email" class="input" id="email">
+                <label for="">Email</label>
+                <span>Email</span>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+              </div>
+              <div class="input-container">
+                <input type="tel" name="phone" class="input" id="phone">
+                <label for="">Phone</label>
+                <span>Phone</span>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+              </div>
 
-                </div>
-                <div class="review__user-rating">9.3</div>
-              </figcaption>
-            </figure>
+              <div class="input-container textarea">
+                <textarea name="message" class="input" id="message"></textarea>
+                <label for="">Message</label>
+                <span>Message</span>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+              </div>
 
-            <button class="btn-inline">Show all <span>&rarr;</span></button>
+              <input type="submit" value="Send" class="btn">
+            </form>
+           
+
+
           </div>
-        </div>
+       </div>
 
-        <div class="cta">
-          <h2 class="cta__book-now">
-            Good news! We have 4 available rooms for your selected dates!
-          </h2>
-          <button class="btn">
-            <span class="btn__visible">Book now</span>
-            <span class="btn__invisible">Only 4 rooms left</span>
-          </button>
-        </div>
-      </main>
-    </div>
-  </div>
+    </section>
+
+    <footer>
+      <div class="header__purplediv--10" ></div>
+      <div class="header__purplediv--11" ></div>
+      <div class="header__purplediv--12" ></div>
+      <div class="header__purplediv--13" ></div>
+      <div class="footer">
+        <p>Copyright &copy; 2020 by Jagjot Singh; All Rights Reserved </p>
+      </div>
+      
+    </footer>
+  </main>
+  
+
+  <script src="app.js"></script>
+ 
 </body>
 
 </html>

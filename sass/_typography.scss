@@ -1,0 +1,23 @@
+.u-center-text {
+    text-align: center !important; //since the child of this is an inline block, it's treated as text and so it's centered
+}
+
+.-margin-bottom-small {
+    margin-bottom: 1.5rem !important;
+}u
+
+.u-margin-bottom-medium {
+    margin-bottom: 4rem !important;
+
+    // @include respond(tab-port) {
+    //     margin-bottom: 3rem !important;
+    // }
+}
+
+.heading-topic{
+        text-align: center;
+        color: rgba(#fff, 1);
+        font-family: 'Raleway', sans-serif;
+        font-size: 4.7rem;
+    
+}

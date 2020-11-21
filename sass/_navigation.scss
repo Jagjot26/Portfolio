@@ -1,0 +1,155 @@
+.navigation{
+    &__checkbox{
+     display: none; //it gets selected when we click on the label, which is a white circle at first on top of the background purple circle
+    }
+
+
+    &__button{
+      background-color: #fff;
+      height: 7rem;
+      width: 7rem;
+      position: fixed;
+      top: 6rem;
+      right: 6rem;
+      border-radius: 50%;
+      z-index: 20000;
+      box-shadow: 0 1rem 3rem rgba($color-black, .25);
+      text-align: center;
+      cursor: pointer;
+    }
+
+    &__background{
+       height: 6rem;
+       width: 6rem;
+       border-radius: 50%;
+       position: fixed;
+       top: 6.5rem;
+       right: 6.5rem;
+       background-image: radial-gradient(#e408f8, #760dff, #510c80);
+       z-index: 10000;
+       transition: all .3s cubic-bezier(0.86, 0, 0.07, 1);
+    //    transform: scale(80);
+    }
+
+    &__nav{
+      height: 100vh;
+      top: 0;
+      right: 0;
+      position: fixed;
+      z-index: 15000;
+      opacity: 0;
+      width: 0;
+    //   transform: translate(28%,-5rem);
+      transition: opacity .3s;
+  
+    }
+
+    &__list{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      list-style: none;
+      text-align: center;
+      width: 100%;
+    }
+
+    &__item{
+      margin: 1rem;
+    }
+
+    &__link{
+
+       &:link, &:visited{
+       display: inline-block;
+        font-size: 3rem;
+       padding: .5rem 2rem;
+       font-weight: 400;
+       font-family: 'Poppins', sans-serif;
+       color: #fff;
+       text-decoration: none;
+       background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
+       background-size: 230%;
+       transition: all .35s;
+       }
+
+       &:hover, &:active{
+           background-position: 100%;
+           color: #e408f8;
+           transform: translateX(1rem);
+       }
+
+       
+    }
+
+    //~ is general sibling selector (not necessarily the direct)
+    &__checkbox:checked ~ &__background{
+        transform: scale(80);
+    }
+
+    &__checkbox:checked ~ &__nav{
+        opacity: 1;
+        width: 
+        100%;
+    }
+
+
+    &__icon{
+        position: relative;
+        margin-top: 3.4rem;
+
+        &,
+        &::before,
+        &::after{
+            width: 3rem;
+            height: 2px;
+            background-color: rgba($color-black, .8);
+            display: inline-block;
+        }
+      
+     
+    }
+
+    &__icon::before,
+    &__icon::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        transition: all .2s;
+    }
+
+    &__icon::before{
+        top: -.8rem;
+    }
+
+    &__icon::after{
+        top: .8rem;
+    }
+
+    &__button:hover &__icon::before{
+      top: -1rem;
+    }
+
+    &__button:hover &__icon::after{
+        top: 1rem;
+      }
+
+
+      //+ is used for adjacent sibling
+      //when checkbox is checked, we select button and then we select button's child element : icon
+      &__checkbox:checked + &__button &__icon{
+         background-color: transparent;
+      } 
+
+      &__checkbox:checked + &__button &__icon::before{
+        transform: rotate(135deg);
+        top: 0rem;
+     } 
+
+     &__checkbox:checked + &__button &__icon::after{
+        transform: rotate(-135deg);
+        top: 0rem;
+     } 
+
+   
+}

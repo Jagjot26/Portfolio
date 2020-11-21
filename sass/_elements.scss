@@ -1,0 +1,558 @@
+.header{
+
+&__content{
+  
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    font-weight: 700;
+    transform: translateY(5.5rem);
+    position: relative;
+
+    &--1{
+        color: rgba(#0657f5, 1);
+        position: absolute;
+        left: 31vw;
+        animation: moveInFromLeft 1.3s;
+        font-size: 4.9rem;
+        font-weight: 600;
+    }
+    &--2{
+        color: rgba(#4489f7, 1);
+        font-family: "Open Sans";
+        font-weight: 300;
+        font-size: 2.8rem;
+        position: absolute;
+        top: 7rem;
+        left: 36vw;
+        animation: moveInFromRight 1.3s;
+       
+    }
+   
+}
+    
+   &__above_image{
+   width: 100%;
+   height: 2rem;
+   background-color:  rgba(#e9dbfc,1);
+}
+
+ .resume{
+     &:link, 
+     &:visited{
+        z-index: 500;
+        width: 17rem;
+        position: absolute; 
+        text-align: center;
+        top: 16rem;
+        left: 43%;
+        padding: 1.2rem 2rem;
+        background-color: #fff;
+        font-size: 1.6rem;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 300;
+        border-radius: 3rem;
+        transition: all .2s;
+        animation: moveInFromBottom 1.4s;
+        box-shadow: 0 1rem 3rem rgba($color-black, .25);
+        text-decoration: none;
+        color: rgba($color-black, .6);
+        outline: none;
+     }
+    
+     &:hover{
+         box-shadow: 0 1rem 3rem rgba($color-black, .5);
+         transform: translateY(-.4rem);
+     }
+ }
+
+   &__img{
+      width: 100%;
+      margin-bottom: 0;
+      padding: 0;
+      display: block;
+   }
+
+
+
+
+   &__purplediv{
+       
+   
+     
+       &--1{
+        background-color: rgba(#8d4cf6, 0.4);
+        height: 3.75vh;
+       
+       }    
+
+       &--2{
+        background-color: rgba(#8d4cf6, 0.55);
+        height: 3.5vh;
+       
+       }
+
+       &--3{
+        background-color: rgba(#8d4cf6, .7);
+        height: 3.25vh;
+    
+       }
+
+       &--4{
+        background-color: rgba(#8d4cf6, .85);
+        height: 3vh;
+        
+    } 
+
+
+    &--5{
+        background-color: rgba(#8d4cf6, 0.2);
+        height: 3.75vh;
+       
+       }    
+
+       &--6{
+        background-color: rgba(#8d4cf6, 0.3);
+        height: 3.5vh;
+       
+       }
+
+       &--7{
+        background-color: rgba(#8d4cf6, .5);
+        height: 3.25vh;
+    
+       }
+
+       &--8{
+        background-color: rgba(#8d4cf6, .7);
+        height: 3vh;
+       } 
+
+    //    &--9{
+    //     background-color: rgba(#8d4cf6, 1);
+    //     height: 3vh;
+    //    }
+       
+    &--10{
+        background-color: rgba(#8d4cf6, 96);
+        height: 3.75vh;
+       } 
+
+       &--11{
+        background-color: rgba(#8d4cf6, .91);
+        height: 3.5vh;
+       } 
+
+       &--12{
+        background-color: rgba(#8d4cf6, .86);
+        height: 3.25vh;
+       } 
+
+       &--13{
+        background-color: rgba(#8d4cf6, .8);
+        height: 3vh;
+       } 
+       
+   }
+}
+
+
+
+.projects{
+    padding: 2rem;
+    background-color: rgba(#8d4cf6, 1);
+}
+
+
+.about{
+     
+    .heading-about{
+        margin-top: 3rem;
+    }
+
+    background-color: rgba(#8d4cf6, .71);
+    min-height: 50vh;
+   
+    .story{
+        padding: 6rem 13rem;
+        padding-left: 18rem;
+        font-size: 1.8rem;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        margin-bottom: 1.9rem;
+        // display: flex;
+
+   
+
+        &__shape {
+            width: 21rem;
+            height: 21rem;
+            float: left; //we want it to be out of regular flow and sit on the left side and also to make the rest of the content float around it
+            transform: translateX(-5.5rem); //best way to move floated elements by some px is to use transform
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+    
+            @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+                border-radius: none;
+                -webkit-clip-path: circle(50% at 50% 50%);
+                clip-path: circle(50% at 50% 50%); //for getting the shape to be a circle
+                -webkit-shape-outside: circle(50% at 50% 50%);
+                shape-outside: circle(50% at 50% 50%); //first number is the radius - 50% means half the height/width of the element, i.e. 7.5rem here
+                //'at' is center positioning, 50% 50% means center is at half of width in x direction and half of width in y direction
+                //shape-outside is how the text/other stuff around it will acknowledge its shape
+                //element HAS TO BE floated and should have dimensions for shape outside to work
+            }
+    
+            // @include respond(phone) {
+            //     transform: translateX(-3rem) skewX(0);
+            // }
+        }
+    
+        &__img {
+            width: 100%; //img in inside of __shape so it'll take up height of __shape, i.e. 15rem
+            transform: translateX(-1rem) scale(1.175);
+            backface-visibility: hidden; //to prevent weird stuff from transform animation
+            transition: all .5s;
+        }
+
+        &__heading{
+            font-size: 3rem;
+            color: rgb(253, 183, 243);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+    
+        &__text {
+             color: rgba(#eee, .95);
+             text-align: justify;
+            // @include respond(phone) {
+            //     transform: translateX(-3rem) skewX(0);
+            // }
+    
+        }
+    
+        &__caption {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 20%);
+            color: $color-white;
+            text-transform: uppercase;
+            font-size: 2rem;
+            text-align: center;
+            opacity: 0;
+            transition: all .5s;
+            backface-visibility: hidden;
+        }
+    
+        &:hover figcaption {
+            opacity: 1;
+            transform: translate(-50%, -50%); //to prevent any weird stuff from transform, use backface visibility hidden
+        }
+    
+        &:hover img {
+            transform: translateX(-1rem) scale(1);
+            filter: blur(2px) brightness(80%); //used for applying filters to imgs
+        }
+    }
+
+}
+
+
+.contact{
+ background-color: rgba(#8d4cf6, 1);
+
+ .container{
+     display: grid;
+     font-family: 'Poppins', sans-serif;
+     font-size: 1.85rem;
+     grid-template-columns: repeat(2, 1fr);
+     position: relative;
+ }
+
+ .form{
+    &__heading{
+    color: #fff;
+    text-align: center;
+    color: rgba(#fff, 1);
+    font-family: 'Raleway', sans-serif;
+    font-size: 4.7rem;
+    margin-bottom: 5rem;
+    text-align: left;
+    }
+
+    &__text{
+     margin-bottom: 4.5rem;
+    }
+}
+
+
+.form__container-a{
+    padding: 8.5rem 6rem;
+    color: #fff;
+  
+
+    .reach{
+        &__div{
+            margin-bottom: 3rem;
+        }
+
+        &__icon{
+            height: 2.5rem;
+            width: 2.5rem;
+            margin-right: 2rem;
+            margin-bottom: 2rem;
+            fill: rgb(253, 183, 243);
+            transition: all .2s;
+        }
+
+        &__icon:hover{
+            fill:  rgb(240, 101, 219);
+        }
+    }
+     
+    .email{
+        display: flex;
+       
+    }
+
+    .phone{
+        display: flex;
+       
+    }
+ 
+    .social{
+        &__text{
+            color: #fff;
+            font-weight: 500;
+            margin-bottom: 2rem;
+          
+        }
+
+        &__icons{
+            display: flex;
+            a{
+                &:link, &:visited{
+       
+                } 
+
+                &:hover .social__icon{
+                  fill: rgb(240, 101, 219);
+                }
+            }
+        }
+
+        &__icon{
+            fill: rgb(253, 183, 243);
+            height: 2.5rem;
+            width: 2.5rem;
+            margin-right: 2rem;
+            transition: all .2s;
+        }
+    }
+}
+
+ .form__container-b{
+   background-color: rgba(#7532e0, 1);
+   padding: 8.5rem 6rem;
+   color: #fff;
+
+   .form__heading{
+    text-align: left;
+       margin-bottom: 5rem;
+   }
+ }
+
+ .form__container-b::before{
+    content: "";
+    position: absolute;
+    height: 2.6rem;
+    width: 2.6rem;
+    background-color: rgba(#7532e0, 1);
+    transform: rotate(45deg);
+    top: 5rem;
+    left: 49.2%;
+    z-index: 1;
+  }
+
+  
+  .input-container{
+      position: relative;
+      margin: 1.4rem 0;
+    }
+  
+    .input{
+        width: 100%;
+        outline: none;
+        border: .2rem solid #fafafa;
+        background: none;
+        padding: 1rem 1.5rem;
+        color: #fff;
+        font-weight: 400;
+        font-size: 1.4rem;
+        font-family: 'Poppins', sans-serif;
+        border-radius: 2.5rem;
+        transition: all .3s;
+    }
+
+
+    textarea.input{
+        padding: .8rem 2rem;
+        min-height: 150px;
+        border-radius: 3rem;
+        resize: none;
+        overflow-y: auto;
+    }
+
+    .input-container label{
+        position: absolute;
+        top:45%;
+        left: 2rem;
+        transform: translateY(-100%);
+        padding: 0 0.4rem;
+        color: #fafafa;
+        font-size: 1.4rem;
+        font-weight: 300;
+        pointer-events: none;
+        z-index: 1000;
+        transition: all .5s;
+        
+    }
+
+    .input-container.textarea label{
+        top: .5rem;
+        transform: translateY(.3rem);
+    }
+
+    .btn{
+        padding: 1.1rem 2.2rem;
+        background-color:#fff;
+        border: .2rem solid #fafafa;
+        font-size: 1.6rem;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        color: rgba(#7532e0, 1);
+        border-radius: 2.4rem;
+        line-height: 1;
+        outline: none;
+        cursor: pointer;
+        transition: all .3s;
+    }
+
+    .btn:hover{
+        background-color: transparent;
+        color: #fff;
+    }
+
+    .input-container span{
+        position: absolute;
+        top: 0;
+        left: 2.3rem;
+        transform: translateY(-50%);
+        font-size: 1.3rem;
+        padding: 0 1rem;
+        color: transparent;
+        pointer-events: none;
+        z-index: 500;
+    }
+
+    .input-container span::before,
+    .input-container span::after{
+        content: "";
+        position: absolute;
+        width: 10%;
+        height: .4rem;
+        opacity: 0;
+        background-color: rgba(#7532e0, 1);
+        top:50%;
+        transform: translateY(-50%);
+        transition: all .2s;
+        
+    }
+
+    .input-container span::before{
+        left: 50%;
+    }
+
+    .input-container span::after{
+        right: 50%;
+    }
+
+    .input-container.focus label{
+        top: 0;
+        transform: translateY(-50%);
+        left: 2.8rem;
+        font-size: 1.3rem;
+    }
+
+    .input-container.focus span::before, .input-container.focus span::after{
+        width: 50%;
+        opacity: 1;
+    }
+
+    .input-container i{
+        font-family: 'FontAwesome';
+        font-style: normal;
+        display: inline;    
+        visibility: hidden;
+        position: absolute;
+        top: 1rem;
+        right: 2rem;
+    }
+
+    .input-container.success i.fa-check-circle{
+        visibility: visible;
+        color: rgb(126, 243, 126);
+    }
+
+    .input-container.error i.fa-exclamation-circle{
+        visibility: visible;
+        color: rgb(255, 150, 136);
+    }
+
+    .input-container small{
+        visibility: hidden;
+        font-size: 1.4rem;
+        font-weight: 300;
+        margin-left: 1rem;
+    }
+
+    .input-container.error small{
+        visibility: visible;
+        color: rgb(255, 150, 136);
+    }
+
+    .input-container.error input{
+        border: .2rem solid  rgb(255, 150, 136);
+    }
+
+    .input-container.success input{
+        border: .2rem solid  rgb(126, 243, 126);
+    }
+
+    .input-container.error textarea{
+        border: .2rem solid  rgb(255, 150, 136);
+    }
+
+  
+
+    .input-container.success textarea{
+        border: .2rem solid  rgb(126, 243, 126);
+    }
+
+}
+
+
+
+.footer{
+    height: 6rem;
+    background-color: rgba(#8d4cf6, .71);
+  p{
+      padding: 2rem;
+      text-align: center;
+      color: rgba(#fff, .75);
+      font-size: 1.4rem;
+      font-weight: 400;
+      font-family: 'Poppins', sans-serif;
+  }
+}

@@ -1,0 +1,378 @@
+  .cards{
+      padding: 5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+      gap: 6rem;
+  }
+  
+  
+
+//inner grid and some formatting 
+.card{
+    &__side--front{
+        display: grid;
+        row-gap: 3.5rem;
+    }
+    
+    &__picture{
+        grid-row: 1/span 5;
+        grid-column: 1/-1;
+    }
+
+    &__heading{
+     padding: .75rem;
+     grid-row: 5/6;
+     grid-column: 1/-1;
+     justify-self: center;
+     align-self: flex-end;
+     transform: translateY(50%);
+     color: #fff;
+     font-size: 1.75rem;
+     font-weight: 300;
+     text-transform: uppercase;
+     letter-spacing: .4rem;
+
+     
+     &--1{
+        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+     }
+
+     &--2{
+        background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark)
+     }
+
+     &--3{
+        background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark)
+     }
+
+    }
+    &__intro{
+     grid-row: 6/7;
+     padding: 2rem 3.2rem 0 3.2rem;
+     font-size: 1.4rem;
+     font-family: 'Raleway', sans-serif;
+     font-weight: 400;
+    }
+
+    &__details-indepth{
+        margin-bottom: 3.5rem;
+        color: #fff;
+        font-weight: 300;
+
+        &-alorine{
+            margin-bottom: 2.5rem;
+        }
+      
+      p{
+          font-size: 2.5rem;
+          font-weight: 700;
+          margin-bottom: 1.25rem;
+          font-family: 'Raleway', sans-serif;
+      }
+
+      ul{
+          list-style: none;
+      }
+
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        &:not(:last-child) {
+            border-bottom: .5px solid rgba(#fff,.3);
+        }
+    }
+
+    }
+
+
+
+    &__technologies{
+       
+
+        padding-right: 2.3rem;
+        margin-left: auto;
+        .app{
+            &--1{
+                fill: rgba($color-secondary-light, 1);
+            }
+
+            &--2{
+                fill: rgba($color-primary-dark, 1);
+            }
+
+            &--3{
+                fill: rgba($color-tertiary-dark, 1);
+            }
+        }
+     
+        svg{
+          
+            height: 1.75rem;
+            width: 1.75rem;
+            margin-right: 1rem;
+            margin-bottom: .25rem;
+
+            
+    
+        }
+    }
+
+}
+
+
+
+
+.btn--chat{
+    &-1{
+      margin-bottom: 2rem;
+    }
+
+    &-2{
+
+    }
+}
+
+.btn--white{
+
+    &:link, &:visited{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    color: $color-grey-dark;
+    width: 100%;
+
+
+    .download_btn{
+        display: flex;
+        background-color: #fff;
+        padding: 1rem 2rem;
+        border-radius: 2.7rem;
+        width: 65%;
+        transition: all .2s;
+   
+
+        svg{
+         
+            height:2.75rem;
+            width: 2.75rem;
+            margin-right: 3rem;
+        }
+        p{
+            font-size: 1.5rem;
+            font-family: 'Raleway';
+            font-weight: 400;
+            transform: translateY(.2rem);
+        }
+    }
+
+
+    }
+}
+
+.btn--white:focus{
+    outline: none;
+}
+
+.download_btn:hover{
+    box-shadow: 0 1rem 2rem rgba($color-black, .35);
+    transform: translateY(-2px);
+}
+
+
+
+
+
+
+
+
+
+
+  //FUNCTIONALITY
+   .card {
+    perspective: 150rem; //this needs a child property on the element where we want to show perspective. We need a huge value for perspective
+    //for perspective, the lower the value, the more dramatic the effect is
+    -moz-perspective: 150rem; //to make perspective work on Mozilla Firefox
+    position: relative;
+    height: 45rem; //this is done to reset the height to 50rem after it gets set to 0 when the children are set to absolute positioning
+
+    &__side {
+        height: 45rem;
+        transition: all .8s ease;
+        position: absolute; //when we give absolute positioning without any width, the elements will adjust their width according to the content in them(text in this case)
+        //in absolute positioning, parent also collapses and loses its height, just like floats.
+        //so, card container will have 0 height by default. So, we need to explicitly mention it in
+        //the card class
+        top: 0;
+        left: 0;
+        width: 100%; //this works because it takes 1/3 of width as defined in the grid earliers
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden; //this makes the elements below one element invisible, so we wont be able to see the back side if we're on front side and vice versa
+        border-radius: 3px;
+        overflow: hidden; //this is done to prevent the nat-5.jpg from overflowing the parent and hence to also stop it from making the rounded borders invisible
+        box-shadow: 0 1.5rem 4rem rgba(0,0,0, .2);
+
+
+        &--front {
+            background-color: #fff;
+        }
+
+        &--back {
+            transform: rotateY(180deg); //even before we flip the card, this side should already be flipped so that when we hover it, it flips back to 0 deg.
+
+        }
+    }
+
+    &:hover &__side--front {
+        transform: rotateY(-180deg); //rotates -180deg(or half rotation) along the y or vertical axis
+    }
+
+    &:hover &__side--back {
+        transform: rotateY(0deg); //back side should come back to 0deg
+    }
+
+
+//FRONT SIDE STYLING
+&__picture {
+    background-size: cover;
+    background-blend-mode: screen;
+   
+    border-top-right-radius: 3px; //borde radius breaks because of clip path for some reason. So, we have to specify it again here
+    border-top-left-radius: 3px;
+
+
+    &--1 {
+        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(../img/chat.png); //url location should be with resp to style.css, and not _card.scss
+        //we can add two backgrounds(i.e. a gradient and an image) above in the background-image property and then blend them together!
+
+    }
+
+    &--2 {
+        background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url(../img/book.png);
+    }
+
+    &--3 {
+        background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark), url(../img/alz.png);
+    }
+}
+
+
+
+&__details {
+
+    ul {
+        list-style: none;
+        width: 80%;
+        margin: 0 auto;
+
+        li {
+            text-align: center;
+            font-size: 1.5rem;
+            padding: 1rem;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid $color-grey-light-2;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+//BACK SIDE STYLING
+&__side--back {
+    &-1 {
+        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+    }
+
+    &-2 {
+        background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+    }
+
+    &-3 {
+        background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+    }
+}
+
+
+&__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    text-align: center;
+}
+
+
+
+//@include respond(tab-port)
+//(hover:none) is used to check if the screen is touch screen or not bcz we can't hover on touch
+@media only screen and (max-width: 56.25em),
+only screen and (hover:none) {
+
+    //FUNCTIONALITY
+
+    height: auto;
+    border-radius: 3px;
+    background-color: $color-white;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+    &__side {
+        height: auto;
+        position: relative;
+        box-shadow: none;
+
+
+        &--back {
+            transform: rotateY(0);
+            clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0% 100%);
+        }
+    }
+
+    &:hover &__side--front {
+        transform: rotateY(0); //rotates -180deg(or half rotation) along the y or vertical axis
+    }
+
+    &__details {
+        padding: 1rem 3rem;
+    }
+
+
+
+    //BACK SIDE STYLING
+
+
+
+    &__cta {
+        position: relative;
+        top: 0%;
+        left: 0%;
+        transform: translate(0);
+        width: 100%;
+        padding: 7rem 4rem 4rem 4rem;
+    }
+
+    &__price-box {
+        margin-bottom: 3rem;
+    }
+
+    &__price-value {
+        font-size: 4rem;
+    }
+}
+
+
+
+
+
+
+}
