@@ -82,6 +82,7 @@ $color-black: #000;
 html {
     box-sizing: border-box;
     font-size: 62.5%; //1rem = 10px, 10px / 16px = .625 = 62.5%
+    scroll-behavior: smooth;
 
     @media only screen and (max-width: $bp-large) {
         font-size: 50%;
@@ -91,7 +92,7 @@ html {
 body {
     font-family: 'Open Sans', sans-serif; //sans serif is the fallback if Open Sans isn't downloaded for some reason
     font-weight: 400;
-    padding: 3rem;
+    padding: 0;
     line-height: 1.6;
     // background-color: rgba(85,60,161,0.85);
     background-size: cover;
