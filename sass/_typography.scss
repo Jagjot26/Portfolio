@@ -20,5 +20,9 @@
         font-family: 'Raleway', sans-serif;
         font-size: 4.7rem;
          font-weight: 600;
+
+         @media only screen and (max-width: $bp-smallest){
+             font-size: 3.8rem;
+         }
          
 }

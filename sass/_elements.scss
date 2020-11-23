@@ -168,6 +168,10 @@
   
   li {
     padding: 0 5rem;
+    @media only screen and (max-width: $bp-smallest) {
+        font-size: 1.4rem;
+        padding: 0 2rem;
+    }
   }
   li a:link,
   li a:visited {
@@ -231,15 +235,26 @@
 
     background-color: rgba(#6f2add, 1);
     min-height: 50vh;
-   
+
+
+  
+
     .story{
-        padding: 6rem 13rem;
-        padding-left: 18rem;
+        padding: 6rem 20rem;
+        padding-left: 25rem;
         font-size: 1.8rem;
         font-family: 'Poppins', sans-serif;
         font-weight: 400;
         margin-bottom: 1.9rem;
         // display: flex;
+        @media only screen and (max-width: $bp-big){
+            padding-right: 15rem;
+            padding-left: 20rem;
+         }
+
+         
+
+
 
    
 
@@ -251,6 +266,14 @@
             position: relative;
             overflow: hidden;
             border-radius: 50%;
+   
+            @media only screen and (max-width: 59.375em){
+                transform: translate(-5rem, -1.5rem);
+              }
+
+           
+
+            
     
             @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
                 border-radius: none;
@@ -273,6 +296,8 @@
             transform: translateX(-1rem) scale(1.175);
             backface-visibility: hidden; //to prevent weird stuff from transform animation
             transition: all .5s;
+
+            
         }
 
         &__heading{
@@ -314,7 +339,65 @@
             transform: translateX(-1rem) scale(1);
             filter: blur(2px) brightness(80%); //used for applying filters to imgs
         }
+
+        //59.375em = 950px/16
+    @media only screen and (max-width: $bp-small){
+        display: none;
+      }
     }
+
+    
+
+}
+
+.about-2{
+    @media only screen and (max-width: 156.25em){
+        display: none;
+      }
+    
+    font-family: 'Poppins', sans-serif;
+    flex-direction: column;
+    
+    
+
+   img{
+       width: 25rem;
+       margin-bottom: 4rem;
+       border-radius: 50%;
+       align-self: center;
+   }
+   
+   h2{
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+   }
+
+   p{
+    font-size: 1.85rem;
+
+    @media only screen and (max-width: $bp-small){
+        font-size: 1.75rem;
+      }
+    @media only screen and (max-width: $bp-smallest){
+        font-size: 1.4rem;
+      }
+   }
+   
+    //59.375em = 950px/16
+    @media only screen and (max-width: $bp-small){
+        display: flex;
+      opacity: 1;
+      width: auto;
+      height: auto;
+      padding: 6rem 15rem;
+    }
+
+      //37.5 =600px/16
+      @media only screen and (max-width: 37.5em){
+        padding: 6rem 7rem;
+      }
+
 
 }
 
@@ -329,6 +412,11 @@
      font-weight: 300;
      grid-template-columns: repeat(2, 1fr);
      position: relative;
+
+     @media only screen and (max-width: $bp-small){
+        grid-template-columns: 1fr;
+        font-size: 1.6rem;
+     }
  }
 
  .form{
@@ -341,6 +429,10 @@
     margin-bottom: 5rem;
     text-align: left;
     font-weight: 600;
+    @media only screen and (max-width: $bp-smallest){
+        font-size: 3.8rem;
+        margin-bottom: 4rem;
+    }
     }
 
     &__text{
@@ -350,7 +442,13 @@
 
 
 .form__container-a{
-    padding: 8.5rem 6rem;
+    padding: 8.5rem 17%;
+    @media only screen and (max-width: $bp-biggerThanMedium){
+        padding: 8.5rem 12%;
+    }
+    @media only screen and (max-width: $bp-small){
+        padding: 8.5rem 17%;
+    }
     color: #fff;
   
 
@@ -416,12 +514,22 @@
 
  .form__container-b{
    background-color: rgba(#7532e0, 1);
-   padding: 8.5rem 6rem;
+   padding: 8.5rem 17%;
    color: #fff;
+   @media only screen and (max-width: $bp-biggerThanMedium){
+    padding: 8.5rem 12%;
+}
+@media only screen and (max-width: $bp-small){
+    padding: 8.5rem 17%;
+}
 
    .form__heading{
     text-align: left;
        margin-bottom: 5rem;
+       @media only screen and (max-width: $bp-smallest){
+        font-size: 3.8rem;
+        margin-bottom: 4rem;
+    }
    }
  }
 
@@ -437,6 +545,41 @@
     z-index: 1;
   }
 
+  @media only screen and (max-width: $bp-small){
+    .form__container-b::before{
+        content: "";
+        position: absolute;
+        height: 6rem;
+        width: 6rem;
+        background-color: rgba(#7532e0, 1);
+        top: 64rem;
+        left: 70%;
+        z-index: 1;
+       
+      }
+}
+
+@media only screen and (max-width: 565px){
+    .form__container-b::before{
+        content: "";
+        position: absolute;
+        height: 6rem;
+        width: 6rem;
+        background-color: rgba(#7532e0, 1);
+        top: 67rem;
+        left: 70%;
+        z-index: 1;
+       
+      }
+}
+
+
+@media only screen and (max-width: 460px){
+    .form__container-b::before{
+       display: none;
+       
+      }
+}
   
   .input-container{
       position: relative;
@@ -608,9 +751,11 @@
 
 
 .footer{
+    overflow: hidden;
     height: 6rem;
     background-color: rgba(#833ff0, .75);
   p{
+      margin: 0;
       padding: 2rem;
       text-align: center;
       color: rgba(#fff, .75);

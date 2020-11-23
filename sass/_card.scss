@@ -1,8 +1,33 @@
   .cards{
-      padding: 5rem;
+      justify-content: center;
+      padding: 5rem 0;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+      grid-template-columns: repeat(3, 33rem);
       gap: 6rem;
+   
+
+      @media only screen and (max-width: $bp-large) {
+        gap: 4.5rem;
+      }
+
+      @media only screen and (max-width: $bp-biggerThanMedium) {
+        gap: 3rem;
+      }
+
+      @media only screen and (max-width: $bp-medium) {
+        grid-template-columns: repeat(2, 35rem);
+        gap: 5rem;
+      }
+
+      @media only screen and (max-width: $bp-small) {
+        grid-template-columns: repeat(1, 37.5rem);
+      }
+
+      @media only screen and (max-width: $bp-smallest) {
+        grid-template-columns: repeat(1, 33rem);
+      }
+      
+
   }
   
   
@@ -52,6 +77,44 @@
      font-size: 1.4rem;
      font-family: 'Raleway', sans-serif;
      font-weight: 400;
+
+    //  .intro--add{
+    //      &-text{
+    //         display: none;
+    //         @media only screen and (max-width: $bp-medium){
+    //             display: block;
+    //         }
+    //      }
+
+    //      &-list{
+    //         display: none;
+    //         @media only screen and (max-width: $bp-medium){
+    //             display: block;
+    //         }
+    //      }
+        
+    //  }
+    }
+
+    .app-links{
+        display: none;
+     
+         
+        @media only screen and (max-width: $bp-medium){
+            display: inline;
+            margin-left: auto;
+            padding-right: 2rem;
+           
+        }
+    }
+
+    .app-link{
+        svg{
+            height: 2.5rem;
+            width: 2.5rem;
+            margin-right: 2.5rem;
+            fill: rgba(0,0,0, .7);
+        }
     }
 
     &__details-indepth{
@@ -89,8 +152,10 @@
 
 
     &__technologies{
-       
-
+        @media only screen and (max-width: $bp-medium){
+            display: none;
+        }
+     
         padding-right: 2.3rem;
         margin-left: auto;
         .app{
@@ -112,7 +177,7 @@
             height: 1.75rem;
             width: 1.75rem;
             margin-right: 1rem;
-            margin-bottom: .25rem;
+            margin-bottom: .5rem;
 
             
     
@@ -196,9 +261,11 @@
     -moz-perspective: 150rem; //to make perspective work on Mozilla Firefox
     position: relative;
     height: 45rem; //this is done to reset the height to 50rem after it gets set to 0 when the children are set to absolute positioning
+  
 
     &__side {
         height: 45rem;
+    
         transition: all .8s ease;
         position: absolute; //when we give absolute positioning without any width, the elements will adjust their width according to the content in them(text in this case)
         //in absolute positioning, parent also collapses and loses its height, just like floats.
@@ -259,6 +326,8 @@
 
 
 
+
+
 &__details {
 
     ul {
@@ -316,23 +385,24 @@
 
 //@include respond(tab-port)
 //(hover:none) is used to check if the screen is touch screen or not bcz we can't hover on touch
-@media only screen and (max-width: 56.25em),
+@media only screen and (max-width: $bp-medium),
 only screen and (hover:none) {
 
     //FUNCTIONALITY
 
-    height: auto;
+    height: 49rem;
     border-radius: 3px;
     background-color: $color-white;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 
     &__side {
-        height: auto;
+        height: 49rem;
         position: relative;
         box-shadow: none;
 
 
         &--back {
+            display: none;
             transform: rotateY(0);
             clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0% 100%);
         }
@@ -347,27 +417,6 @@ only screen and (hover:none) {
     }
 
 
-
-    //BACK SIDE STYLING
-
-
-
-    &__cta {
-        position: relative;
-        top: 0%;
-        left: 0%;
-        transform: translate(0);
-        width: 100%;
-        padding: 7rem 4rem 4rem 4rem;
-    }
-
-    &__price-box {
-        margin-bottom: 3rem;
-    }
-
-    &__price-value {
-        font-size: 4rem;
-    }
 }
 
 

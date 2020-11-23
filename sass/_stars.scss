@@ -27,7 +27,36 @@
     &__secondary{
       font-size: 2.7rem;
       animation: fadeIn 1.5s;
+      @media only screen and (max-width: $bp-small){
+        font-size: 2.3rem;
     }
+
+    @media only screen and (max-width: $bp-smallest){
+        font-size: 1.8rem;
+        letter-spacing: 0.75rem;
+    }
+
+    @media only screen and (max-width: 25em){
+        font-size: 1.6rem;
+        letter-spacing: 0.5rem;
+    }
+      
+    }
+
+    @media only screen and (max-width: $bp-small){
+        font-size: 4.5rem;
+        
+    }
+
+    @media only screen and (max-width: $bp-smallest){
+        font-size: 2.5rem;
+        letter-spacing: 0.75rem;
+    }
+
+    // @media only screen and (max-width: 400px){
+    //     font-size: 2.3rem;
+    //     letter-spacing: 0.5rem;
+    // }
 }
 
 #title span {

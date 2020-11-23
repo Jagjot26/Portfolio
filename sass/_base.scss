@@ -39,10 +39,14 @@ Grey dark 3: #999
 }
 
 //css custom property or variables don't work in media queries, so have to define sass variables
-$bp-largest: 75em; //   1200px/16px = 75em as in media queries, ems always take their value from the browser font size, i.e 16px
+$bp-max: 112.5em; // 1800px/16 = 112.5em
+$bp-huge: 106.25em; // 1700/16
+$bp-big: 96.875em; // 1550/16
+$bp-larger: 78.125em; //   1250px/16px = 78.125em as in media queries, ems always take their value from the browser font size, i.e 16px
 $bp-large: 71.875em; //  1150px/16px = 71.875em;
+$bp-biggerThanMedium: 62.5rem; //1000/16
 $bp-medium: 56.25em; //  900/16 = 56.25em;
-$bp-small: 37.5em; //  600px/16px = 37.5em;
+$bp-small: 46.875em; //  750px/16px = 46.875em;
 $bp-smallest: 31.25em; // 500px/16px = 31.25em;
 
 
@@ -71,6 +75,7 @@ $color-black: #000;
 * {
     margin: 0;
     padding: 0;
+   
 }
 
 *,
@@ -84,8 +89,38 @@ html {
     font-size: 62.5%; //1rem = 10px, 10px / 16px = .625 = 62.5%
     scroll-behavior: smooth;
 
+  
+ 
+
+    // @media only screen and (max-width: $bp-huge) {
+    //     font-size: 70%;
+    // }
+
+    // @media only screen and (max-width: $bp-big) {
+    //     font-size: 58%;
+    // }
+
+    @media only screen and (max-width: $bp-larger) {
+        font-size: 55%;
+    }
+
     @media only screen and (max-width: $bp-large) {
         font-size: 50%;
+    }
+
+    @media only screen and (max-width: $bp-biggerThanMedium) {
+        font-size: 47.5%;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        font-size: 45%;
+    }
+
+  
+
+
+    @media only screen and (min-width: $bp-max) {
+        font-size: 75%;
     }
 }
 
@@ -95,7 +130,7 @@ body {
     padding: 0;
     line-height: 1.6;
     // background-color: rgba(85,60,161,0.85);
-    background-size: cover;
-    background-repeat: no-repeat; //removes repeating background
+    // background-size: cover;
+    // background-repeat: no-repeat; //removes repeating background
     
 }
