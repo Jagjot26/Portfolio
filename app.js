@@ -63,58 +63,137 @@ const message = document.getElementById("message");
 //   keepInputInFocus();
 // });
 
-function keepInputInFocus() {
-  const inputs = document.getElementsByClassName("input");
-  for (var i = 0; i < inputs.length; i++) {
-    // console.log(inputs[i].parentNode.classList);
-    if (inputs[i].value !== "") {
-      inputs[i].parentNode.classList.add("focus");
+email.addEventListener(
+  "keyup",
+  function (e) {
+    const emailValue = email.value.trim();
+    if (emailValue === "") {
+      //   setErrorFor(email, "Email cannot be blank");
+    } else if (!isEmail(emailValue)) {
+      setErrorFor(email, "Not a valid email");
+    } else {
+      setSuccessFor(email);
     }
-  }
-}
 
-function checkInputs() {
-  //trim to remove whitespaces
-  const usernameValue = username.value.trim();
-  const emailValue = email.value.trim();
-  const phoneValue = phone.value.trim();
-  const messageValue = message.value.trim();
-  let err = 0;
+    if (emailValue !== "") {
+      this.parentNode.classList.add("focus");
+    } else {
+      this.parentNode.className = "input-container";
+    }
+  },
+  false
+);
 
-  if (usernameValue === "") {
-    setErrorFor(username, "Username cannot be blank");
-  } else {
-    setSuccessFor(username);
-    err--;
-  }
+username.addEventListener(
+  "keyup",
+  function (e) {
+    const usernameValue = username.value.trim();
+    if (usernameValue === "") {
+      //   setErrorFor(username, "Username cannot be blank");
+    } else {
+      setSuccessFor(username);
+    }
 
-  if (emailValue === "") {
-    setErrorFor(email, "Email cannot be blank");
-  } else if (!isEmail(emailValue)) {
-    setErrorFor(email, "Not a valid email");
-  } else {
-    setSuccessFor(email);
-    err--;
-  }
+    if (usernameValue !== "") {
+      this.parentNode.classList.add("focus");
+    } else {
+      this.parentNode.className = "input-container";
+    }
+  },
+  false
+);
 
-  if (phoneValue === "") {
-    setErrorFor(phone, "Mobile number cannot be blank");
-  } else {
-    setSuccessFor(phone);
-    err--;
-  }
+phone.addEventListener(
+  "keyup",
+  function (e) {
+    const phoneValue = phone.value.trim();
+    if (phoneValue === "") {
+      //   setErrorFor(phone, "Mobile number cannot be blank");
+    } else {
+      setSuccessFor(phone);
+    }
 
-  if (messageValue === "") {
-    setErrorFor(message, "Message cannot be blank");
-  } else {
-    setSuccessFor(message);
-    err--;
-  }
+    if (phoneValue !== "") {
+      this.parentNode.classList.add("focus");
+    } else {
+      this.parentNode.className = "input-container";
+    }
+  },
+  false
+);
 
-  //   if (err === -4) {
-  //     window.open("mailto:jaysing989@gmail.com?subject=subject&body=messageValue");
-  //   }
-}
+message.addEventListener(
+  "keyup",
+  function (e) {
+    const messageValue = message.value.trim();
+
+    if (messageValue === "") {
+      //   setErrorFor(message, "Message cannot be blank");
+    } else {
+      setSuccessFor(message);
+    }
+
+    if (messageValue !== "") {
+      this.parentNode.classList.add("focus");
+    } else {
+      this.parentNode.className = "input-container";
+    }
+  },
+  false
+);
+
+// function keepInputInFocus() {
+//   const inputs = document.getElementsByClassName("input");
+//   for (var i = 0; i < inputs.length; i++) {
+//     // console.log(inputs[i].parentNode.classList);
+//     if (inputs[i].value !== "") {
+//       inputs[i].parentNode.classList.add("focus");
+//     }
+//   }
+// }
+
+// function checkInputs() {
+//   //trim to remove whitespaces
+//   const usernameValue = username.value.trim();
+//   const emailValue = email.value.trim();
+//   const phoneValue = phone.value.trim();
+//   const messageValue = message.value.trim();
+//   let err = 0;
+
+//   if (usernameValue === "") {
+//     setErrorFor(username, "Username cannot be blank");
+//   } else {
+//     setSuccessFor(username);
+//     err--;
+//   }
+
+//   if (emailValue === "") {
+//     setErrorFor(email, "Email cannot be blank");
+//   } else if (!isEmail(emailValue)) {
+//     setErrorFor(email, "Not a valid email");
+//   } else {
+//     setSuccessFor(email);
+//     err--;
+//   }
+
+//   if (phoneValue === "") {
+//     setErrorFor(phone, "Mobile number cannot be blank");
+//   } else {
+//     setSuccessFor(phone);
+//     err--;
+//   }
+
+//   if (messageValue === "") {
+//     setErrorFor(message, "Message cannot be blank");
+//   } else {
+//     setSuccessFor(message);
+//     err--;
+//   }
+
+//   //   if (err === -4) {
+//   //     window.open("mailto:jaysing989@gmail.com?subject=subject&body=messageValue");
+//   //   }
+// }
 
 function setErrorFor(input, message) {
   const inputContainer = input.parentElement;
