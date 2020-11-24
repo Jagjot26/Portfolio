@@ -56,12 +56,12 @@ const email = document.getElementById("email");
 const phone = document.getElementById("phone");
 const message = document.getElementById("message");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+// form.addEventListener("submit", (e) => {
+//   e.preventDefault();
 
-  checkInputs();
-  keepInputInFocus();
-});
+//   checkInputs();
+//   keepInputInFocus();
+// });
 
 function keepInputInFocus() {
   const inputs = document.getElementsByClassName("input");
