@@ -16,6 +16,10 @@
       box-shadow: 0 1rem 3rem rgba($color-black, .25);
       text-align: center;
       cursor: pointer;
+      @media only screen and (max-width: $bp-smallest){
+        height: 4rem;
+        width: 4rem;
+      }
     }
 
     &__background{
@@ -29,6 +33,10 @@
        z-index: 10000;
        transition: all .3s cubic-bezier(0.86, 0, 0.07, 1);
     //    transform: scale(80);
+    @media only screen and (max-width: $bp-smallest){
+      height: 3rem;
+      width: 3rem;
+    }
     }
 
     &__nav{
@@ -97,6 +105,9 @@
     &__icon{
         position: relative;
         margin-top: 3.4rem;
+        @media only screen and (max-width: $bp-smallest){
+          margin-top: 2rem;
+        }
 
         &,
         &::before,
@@ -105,6 +116,10 @@
             height: 2px;
             background-color: rgba($color-black, .8);
             display: inline-block;
+            @media only screen and (max-width: $bp-smallest){
+              height: 1px;
+              width: 1.5rem;
+            }
         }
       
      
@@ -120,10 +135,12 @@
 
     &__icon::before{
         top: -.8rem;
+        
     }
 
     &__icon::after{
         top: .8rem;
+        
     }
 
     &__button:hover &__icon::before{

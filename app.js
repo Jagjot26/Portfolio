@@ -1,3 +1,21 @@
+// function checkRefresh() {
+//   if (document.refreshForm.visited.value == "") {
+//     // This is a fresh page load
+//     document.refreshForm.visited.value = "1";
+
+//     // You may want to add code here special for
+//     // fresh page loads
+//   } else {
+//     // This is a page refresh
+
+//     // Insert code here representing what to do on
+//     // a refresh
+//     window.location = window.location.pathname;
+//   }
+// }
+
+// checkRefresh();
+
 const inputs = document.querySelectorAll(".input");
 
 function focusFunc() {
@@ -48,7 +66,7 @@ form.addEventListener("submit", (e) => {
 function keepInputInFocus() {
   const inputs = document.getElementsByClassName("input");
   for (var i = 0; i < inputs.length; i++) {
-    console.log(inputs[i].parentNode.classList);
+    // console.log(inputs[i].parentNode.classList);
     if (inputs[i].value !== "") {
       inputs[i].parentNode.classList.add("focus");
     }
@@ -61,11 +79,13 @@ function checkInputs() {
   const emailValue = email.value.trim();
   const phoneValue = phone.value.trim();
   const messageValue = message.value.trim();
+  let err = 0;
 
   if (usernameValue === "") {
     setErrorFor(username, "Username cannot be blank");
   } else {
     setSuccessFor(username);
+    err--;
   }
 
   if (emailValue === "") {
@@ -74,19 +94,26 @@ function checkInputs() {
     setErrorFor(email, "Not a valid email");
   } else {
     setSuccessFor(email);
+    err--;
   }
 
   if (phoneValue === "") {
     setErrorFor(phone, "Mobile number cannot be blank");
   } else {
     setSuccessFor(phone);
+    err--;
   }
 
   if (messageValue === "") {
     setErrorFor(message, "Message cannot be blank");
   } else {
     setSuccessFor(message);
+    err--;
   }
+
+  //   if (err === -4) {
+  //     window.open("mailto:jaysing989@gmail.com?subject=subject&body=messageValue");
+  //   }
 }
 
 function setErrorFor(input, message) {
